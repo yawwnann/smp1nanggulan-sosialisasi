@@ -3,31 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sistem Absensi Digital</title>
+    <title>Sistem Absensi Digital — KKN UAD IV.A2</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="container">
-      <div class="form-wrapper">
-        <div class="form-header">
-          <div class="logo-container">
-            <img src="Asset 5.png" alt="Logo" class="logo" />
-          </div>
-          <div class="header-content">
-            <h1>Sistem Absensi Digital</h1>
-            <p>Silakan isi data kehadiran Anda dengan lengkap dan benar</p>
-          </div>
+    <div class="page">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <img src="Asset 5.png" alt="Logo KKN UAD IV.A2" class="topbar-logo" />
+      </header>
+
+      <!-- Card -->
+      <main class="card">
+        <!-- Card Header -->
+        <div class="card-head">
+          <h1>Sistem Absensi Digital</h1>
+          <p>Silakan isi data kehadiran Anda dengan lengkap dan benar</p>
         </div>
 
-        <form id="absensiForm">
-          <div class="form-group">
-            <label for="nama">Nama Lengkap</label>
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Form -->
+        <form id="absensiForm" class="card-body" autocomplete="off">
+          <div class="field">
+            <label for="nama">
+              <svg
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              Nama Lengkap
+            </label>
             <input
               type="text"
               id="nama"
@@ -37,41 +58,121 @@
             />
           </div>
 
-          <div class="form-group">
-            <label for="jenisKelamin">Jenis Kelamin</label>
-            <select id="jenisKelamin" name="jenisKelamin" required>
-              <option value="">Pilih jenis kelamin</option>
-              <option value="Laki-laki">Laki-laki</option>
-              <option value="Perempuan">Perempuan</option>
-            </select>
+          <div class="field">
+            <label for="jenisKelamin">
+              <svg
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              Jenis Kelamin
+            </label>
+            <div class="select-wrap">
+              <select id="jenisKelamin" name="jenisKelamin" required>
+                <option value="">Pilih jenis kelamin</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+              <svg
+                class="select-arrow"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="umur">Umur</label>
-            <input
-              type="number"
-              id="umur"
-              name="umur"
-              placeholder="Masukkan umur"
-              min="1"
-              max="100"
-              required
-            />
+          <div class="field-row">
+            <div class="field">
+              <label for="umur">
+                <svg
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                Umur
+              </label>
+              <input
+                type="number"
+                id="umur"
+                name="umur"
+                placeholder="Umur"
+                min="1"
+                max="100"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="kelas">
+                <svg
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+                Kelas
+              </label>
+              <input
+                type="text"
+                id="kelas"
+                name="kelas"
+                placeholder="Contoh: 10 IPA 1"
+                required
+              />
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="kelas">Kelas</label>
-            <input
-              type="text"
-              id="kelas"
-              name="kelas"
-              placeholder="Contoh: 10 IPA 1"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="nomorHP">Nomor HP</label>
+          <div class="field">
+            <label for="nomorHP">
+              <svg
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+              Nomor HP
+            </label>
             <input
               type="tel"
               id="nomorHP"
@@ -80,10 +181,11 @@
               pattern="[0-9]{10,13}"
               required
             />
-            <small>Masukkan 10-13 digit angka</small>
+            <span class="hint">Masukkan 10–13 digit angka</span>
           </div>
 
-          <div class="form-group camera-section" style="display: none">
+          <!-- Hidden elements -->
+          <div class="camera-section" style="display: none">
             <video
               id="video"
               autoplay
@@ -92,7 +194,6 @@
             ></video>
             <canvas id="canvas" style="display: none"></canvas>
           </div>
-
           <div class="info-box" style="display: none">
             <p>
               <strong>📍 Lokasi:</strong>
@@ -108,56 +209,105 @@
             </p>
           </div>
 
-          <button type="submit" class="submit-btn" id="submitBtn">
-            <span class="btn-text">Kirim Absensi</span>
-            <span class="btn-loader">
-              <div class="spinner"></div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-label">
+              <svg
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+              Kirim Absensi
+            </span>
+            <span class="btn-loading">
+              <svg
+                class="spin"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="rgba(255,255,255,.35)"
+                  stroke-width="3"
+                />
+                <path
+                  d="M12 2a10 10 0 0 1 10 10"
+                  stroke="white"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Mengirim...
             </span>
           </button>
         </form>
 
-        <div class="success-message" id="successMessage">
-          <svg
-            width="50"
-            height="50"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2" />
-            <path
-              d="M8 12L11 15L16 9"
-              stroke="#4CAF50"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <!-- Success -->
+        <div class="result-state success" id="successMessage">
+          <div class="result-icon">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="11" fill="#ecfdf5" />
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#10b981"
+                stroke-width="1.5"
+              />
+              <path
+                d="M8 12l3 3 5-5"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
           <h2>Absensi Berhasil!</h2>
-          <p>Data Anda telah terkirim ke Telegram</p>
+          <p>Data kehadiran Anda telah berhasil dikirim, Terimakasih.</p>
         </div>
 
-        <div class="error-message" id="errorMessage">
-          <svg
-            width="50"
-            height="50"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="10" stroke="#f44336" stroke-width="2" />
-            <path
-              d="M12 8V12"
-              stroke="#f44336"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-            <circle cx="12" cy="16" r="1" fill="#f44336" />
-          </svg>
-          <h2>Gagal Mengirim!</h2>
-          <p id="errorText">Terjadi kesalahan, silakan coba lagi</p>
+        <!-- Error -->
+        <div class="result-state error" id="errorMessage">
+          <div class="result-icon">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="11" fill="#fef2f2" />
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#ef4444"
+                stroke-width="1.5"
+              />
+              <path
+                d="M12 8v4"
+                stroke="#ef4444"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <circle cx="12" cy="16" r="1" fill="#ef4444" />
+            </svg>
+          </div>
+          <h2>Gagal Mengirim</h2>
+          <p id="errorText">Terjadi kesalahan, silakan coba lagi.</p>
         </div>
-      </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        KKN UAD IV.A2 &copy; 2026 &middot; Sosialisasi SMP N 1 Nanggulan
+      </footer>
     </div>
 
     <script src="script.js"></script>

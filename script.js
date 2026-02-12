@@ -482,18 +482,14 @@ async function sendPhotoToTelegram(photoBlob, data) {
 // ============================================
 
 function setLoading(isLoading) {
-  const submitBtn = form.querySelector(".submit-btn");
-  const btnText = submitBtn.querySelector(".btn-text");
-  const btnLoader = submitBtn.querySelector(".btn-loader");
+  const submitBtn = form.querySelector(".btn-submit");
 
   if (isLoading) {
     submitBtn.disabled = true;
-    btnText.style.display = "none";
-    btnLoader.style.display = "flex";
+    submitBtn.classList.add("is-loading");
   } else {
     submitBtn.disabled = false;
-    btnText.style.display = "block";
-    btnLoader.style.display = "none";
+    submitBtn.classList.remove("is-loading");
   }
 }
 
