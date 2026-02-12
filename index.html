@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Absensi Digital</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-header">
+          <div class="logo-container">
+            <img src="Asset 5.png" alt="Logo" class="logo" />
+          </div>
+          <div class="header-content">
+            <h1>Sistem Absensi Digital</h1>
+            <p>Silakan isi data kehadiran Anda dengan lengkap dan benar</p>
+          </div>
+        </div>
+
+        <form id="absensiForm">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan nama lengkap"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="jenisKelamin">Jenis Kelamin</label>
+            <select id="jenisKelamin" name="jenisKelamin" required>
+              <option value="">Pilih jenis kelamin</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="umur">Umur</label>
+            <input
+              type="number"
+              id="umur"
+              name="umur"
+              placeholder="Masukkan umur"
+              min="1"
+              max="100"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="kelas">Kelas</label>
+            <input
+              type="text"
+              id="kelas"
+              name="kelas"
+              placeholder="Contoh: 10 IPA 1"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="nomorHP">Nomor HP</label>
+            <input
+              type="tel"
+              id="nomorHP"
+              name="nomorHP"
+              placeholder="08xxxxxxxxxx"
+              pattern="[0-9]{10,13}"
+              required
+            />
+            <small>Masukkan 10-13 digit angka</small>
+          </div>
+
+          <div class="form-group camera-section" style="display: none">
+            <video
+              id="video"
+              autoplay
+              playsinline
+              style="display: none"
+            ></video>
+            <canvas id="canvas" style="display: none"></canvas>
+          </div>
+
+          <div class="info-box" style="display: none">
+            <p>
+              <strong>📍 Lokasi:</strong>
+              <span id="locationInfo">Mendeteksi...</span>
+            </p>
+            <p>
+              <strong>📱 Perangkat:</strong>
+              <span id="deviceInfo">Mendeteksi...</span>
+            </p>
+            <p>
+              <strong>🌐 Browser:</strong>
+              <span id="browserInfo">Mendeteksi...</span>
+            </p>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span class="btn-text">Kirim Absensi</span>
+            <span class="btn-loader">
+              <div class="spinner"></div>
+            </span>
+          </button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2" />
+            <path
+              d="M8 12L11 15L16 9"
+              stroke="#4CAF50"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <h2>Absensi Berhasil!</h2>
+          <p>Data Anda telah terkirim ke Telegram</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="12" cy="12" r="10" stroke="#f44336" stroke-width="2" />
+            <path
+              d="M12 8V12"
+              stroke="#f44336"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <circle cx="12" cy="16" r="1" fill="#f44336" />
+          </svg>
+          <h2>Gagal Mengirim!</h2>
+          <p id="errorText">Terjadi kesalahan, silakan coba lagi</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
